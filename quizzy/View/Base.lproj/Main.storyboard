@@ -18,12 +18,29 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tRP-YZ-9Mx">
                                 <rect key="frame" x="10" y="44" width="394" height="808"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uyk-C0-BMr">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="40.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2v9-b4-TtX" userLabel="Score Label">
+                                                <rect key="frame" x="20" y="11.5" width="374" height="17"/>
+                                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="17"/>
+                                                <color key="textColor" red="0.79404568669999998" green="0.1390823424" blue="0.50197285410000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="2v9-b4-TtX" secondAttribute="trailing" id="6OH-r1-scg"/>
+                                            <constraint firstItem="2v9-b4-TtX" firstAttribute="leading" secondItem="Uyk-C0-BMr" secondAttribute="leading" constant="20" id="Ebd-tZ-Gg4"/>
+                                            <constraint firstItem="2v9-b4-TtX" firstAttribute="centerY" secondItem="Uyk-C0-BMr" secondAttribute="centerY" id="nvT-8x-h0w"/>
+                                        </constraints>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LSl-ye-voG" userLabel="Progress View Superview">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="81"/>
+                                        <rect key="frame" x="0.0" y="40.5" width="394" height="40.5"/>
                                         <subviews>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8GE-3e-ddU">
-                                                <rect key="frame" x="0.0" y="39.5" width="394" height="2.5"/>
-                                                <color key="tintColor" red="0.96930998563766479" green="0.28903934487549288" blue="0.62578972693444423" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <rect key="frame" x="0.0" y="19.5" width="394" height="2.5"/>
+                                                <color key="tintColor" red="0.96862745098039216" green="0.29019607843137252" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             </progressView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -105,10 +122,11 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="Uyk-C0-BMr" firstAttribute="height" secondItem="tRP-YZ-9Mx" secondAttribute="height" multiplier="0.05" id="2sX-3K-BJx"/>
                                     <constraint firstItem="suB-Q2-ZLH" firstAttribute="height" secondItem="tRP-YZ-9Mx" secondAttribute="height" multiplier="0.25" id="8wh-05-Mq2"/>
                                     <constraint firstItem="xZo-lB-wJv" firstAttribute="height" secondItem="tRP-YZ-9Mx" secondAttribute="height" multiplier="0.55" id="OZv-iN-KM2"/>
                                     <constraint firstItem="Kir-GF-io7" firstAttribute="height" secondItem="tRP-YZ-9Mx" secondAttribute="height" multiplier="0.1" id="i6T-Fe-h9g"/>
-                                    <constraint firstItem="LSl-ye-voG" firstAttribute="height" secondItem="tRP-YZ-9Mx" secondAttribute="height" multiplier="0.1" id="xeN-wJ-5GG"/>
+                                    <constraint firstItem="LSl-ye-voG" firstAttribute="height" secondItem="tRP-YZ-9Mx" secondAttribute="height" multiplier="0.05" id="xeN-wJ-5GG"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -125,6 +143,7 @@
                         <outlet property="progressView" destination="8GE-3e-ddU" id="R5U-dC-zoR"/>
                         <outlet property="questionLabel" destination="V0d-As-11u" id="qt5-RM-3kb"/>
                         <outlet property="questionNoLabel" destination="G4F-q5-Gwe" id="KV7-Zp-eGm"/>
+                        <outlet property="scoreLabel" destination="2v9-b4-TtX" id="uR1-7V-CUn"/>
                         <outletCollection property="answerButtons" destination="L4L-FY-1b8" collectionClass="NSMutableArray" id="Vh3-7R-btS"/>
                         <outletCollection property="answerButtons" destination="gvY-Rt-unm" collectionClass="NSMutableArray" id="Ccz-AO-JEi"/>
                     </connections>

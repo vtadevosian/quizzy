@@ -12,6 +12,7 @@ struct QuizModel {
     private var questionCount: Int
     private var currentQuiz = [Question]()
     private var currentQuestionNo = 0
+    private var score = 0
     private var _isFinished = false
     
     var isFinished: Bool {
@@ -128,9 +129,11 @@ struct QuizModel {
         _isFinished = currentQuestionNo > questionCount
     }
     
-    func answeredCorrectly(_ userAnswer: String?) -> Bool {
+    mutating func answeredCorrectly(_ userAnswer: String?) -> Bool {
         guard let userAnswer = userAnswer else { return false }
-        return currentQuiz[currentQuestionNo - 1].answer == userAnswer
+        let answeredCorrectly = currentQuiz[currentQuestionNo - 1].answer == userAnswer
+        score += answeredCorrectly ? 1 : 0
+        return answeredCorrectly
     }
     
     func getCurrentQuestionNoText() -> String {
@@ -143,6 +146,10 @@ struct QuizModel {
     
     func getProgressStep() -> Float {
         return 1 / Float(questionCount)
+    }
+    
+    func getScore() -> String {
+        return "Score: \(score)"
     }
     
 }

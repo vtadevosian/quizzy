@@ -14,7 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var questionNoLabel: UILabel!
     @IBOutlet weak var progressView: UIProgressView!
-
+    @IBOutlet weak var scoreLabel: UILabel!
+    
     var quiz = QuizModel()
     
     override func viewDidLoad() {
@@ -61,7 +62,8 @@ class ViewController: UIViewController {
         questionLabel.text = quiz.getCurrentQuestionText()
         questionNoLabel.text = quiz.getCurrentQuestionNoText()
         progressView.progress += quiz.getProgressStep()
-
+        scoreLabel.text = quiz.getScore()
+        
         answerButtons.forEach { button in
             button.backgroundColor = #colorLiteral(red: 0.1411764706, green: 0.1333333333, blue: 0.2666666667, alpha: 1)
         }
