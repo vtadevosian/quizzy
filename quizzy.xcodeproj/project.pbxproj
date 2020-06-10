@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D4A89D1124910D1600A7DA8E /* UIView+setCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A89D1024910D1600A7DA8E /* UIView+setCorner.swift */; };
+		D4A89D1324910D3A00A7DA8E /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A89D1224910D3A00A7DA8E /* Question.swift */; };
 		D4F00A4D2490CF2D005DB0A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F00A4C2490CF2D005DB0A9 /* AppDelegate.swift */; };
 		D4F00A4F2490CF2D005DB0A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F00A4E2490CF2D005DB0A9 /* SceneDelegate.swift */; };
 		D4F00A512490CF2D005DB0A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F00A502490CF2D005DB0A9 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D4A89D1024910D1600A7DA8E /* UIView+setCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+setCorner.swift"; sourceTree = "<group>"; };
+		D4A89D1224910D3A00A7DA8E /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		D4F00A492490CF2D005DB0A9 /* quizzy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = quizzy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F00A4C2490CF2D005DB0A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4F00A4E2490CF2D005DB0A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,9 +64,11 @@
 				D4F00A4E2490CF2D005DB0A9 /* SceneDelegate.swift */,
 				D4F00A502490CF2D005DB0A9 /* ViewController.swift */,
 				D4F00A522490CF2D005DB0A9 /* Main.storyboard */,
+				D4A89D1024910D1600A7DA8E /* UIView+setCorner.swift */,
 				D4F00A552490CF2F005DB0A9 /* Assets.xcassets */,
 				D4F00A572490CF2F005DB0A9 /* LaunchScreen.storyboard */,
 				D4F00A5A2490CF2F005DB0A9 /* Info.plist */,
+				D4A89D1224910D3A00A7DA8E /* Question.swift */,
 			);
 			path = quizzy;
 			sourceTree = "<group>";
@@ -138,8 +144,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4A89D1324910D3A00A7DA8E /* Question.swift in Sources */,
 				D4F00A512490CF2D005DB0A9 /* ViewController.swift in Sources */,
 				D4F00A4D2490CF2D005DB0A9 /* AppDelegate.swift in Sources */,
+				D4A89D1124910D1600A7DA8E /* UIView+setCorner.swift in Sources */,
 				D4F00A4F2490CF2D005DB0A9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
