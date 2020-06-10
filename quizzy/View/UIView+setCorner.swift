@@ -8,8 +8,8 @@
 
 import UIKit
 
-extension UIView{
-    func setCorner(with radius:Int, borderWidth:Int = 0, color: UIColor = .clear){
+extension UIView {
+    func setCorner(with radius: Int, borderWidth: Int = 0, color: UIColor = .clear) {
         self.layer.cornerRadius = CGFloat(radius)
         self.layer.borderColor = color.cgColor
         self.layer.borderWidth = CGFloat(borderWidth)

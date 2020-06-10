@@ -120,8 +120,14 @@ struct QuizModel {
     
     mutating func generate() {
         guard questionCount > 0 && questionCount < questionList.count else { return }
-        
+        reset()
         currentQuiz = Array(questionList.shuffled().suffix(questionCount))
+    }
+    
+    mutating func reset() {
+        currentQuestionNo = 0
+        score = 0
+        _isFinished = false
     }
     
     mutating func nextQuestion() {
@@ -144,12 +150,16 @@ struct QuizModel {
         return currentQuiz[currentQuestionNo - 1].text
     }
     
-    func getProgressStep() -> Float {
-        return 1 / Float(questionCount)
+    func getProgressStep() -> Double {
+        return 1 / Double(questionCount)
     }
     
     func getScore() -> String {
         return "Score: \(score)"
+    }
+    
+    func getPercentage() -> Double {
+        return Double(Int(Double(score) / Double(questionCount) * 10000.0)) / 100.0
     }
     
 }

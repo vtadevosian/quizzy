@@ -53,16 +53,38 @@ class ViewController: UIViewController {
         quiz.nextQuestion()
 
         if quiz.isFinished {
-            answerButtons.forEach { button in
-                button.isEnabled = false
-            }
-            return
+            let percentage = quiz.getPercentage()
+            let alertTitleGreeting: String = percentage == 100.0 ? "Excellent!" : (percentage > 70.0 ? "Not bad!" : (percentage > 30.0 ? "You could have done better." : "Too bad..."))
+            let alertTitle = alertTitleGreeting + " Your total score is \(percentage)%."
+            let alert = UIAlertController(title: alertTitle, message: "What would you wanna do next?", preferredStyle: .alert)
+
+            let repeatQuiz = UIAlertAction(title: "Repeat", style: .default, handler: { _ in
+                self.quiz.reset()
+                self.progressView.progress = 0
+                self.updateUI()
+            })
+            alert.addAction(repeatQuiz)
+            
+            let newQuiz = UIAlertAction(title: "Start a new quiz", style: .default, handler: { _ in
+                self.quiz.generate()
+                self.progressView.progress = 0
+                self.updateUI()
+            })
+            alert.addAction(newQuiz)
+            
+            let goBackAction = UIAlertAction(title: "Go back", style: .cancel, handler: { _ in
+                alert.dismiss(animated: true)
+            })
+            alert.addAction(goBackAction)
+            
+            self.present(alert, animated: true, completion: nil)
+            
+        } else {
+            questionLabel.text = quiz.getCurrentQuestionText()
+            questionNoLabel.text = quiz.getCurrentQuestionNoText()
+            progressView.progress += Float(quiz.getProgressStep())
+            scoreLabel.text = quiz.getScore()
         }
-        
-        questionLabel.text = quiz.getCurrentQuestionText()
-        questionNoLabel.text = quiz.getCurrentQuestionNoText()
-        progressView.progress += quiz.getProgressStep()
-        scoreLabel.text = quiz.getScore()
         
         answerButtons.forEach { button in
             button.backgroundColor = #colorLiteral(red: 0.1411764706, green: 0.1333333333, blue: 0.2666666667, alpha: 1)
